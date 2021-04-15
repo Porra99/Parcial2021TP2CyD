@@ -14,15 +14,12 @@
     pants: 5,
   }
 
-  const HAY_STOCK = 200;
-  const NO_HAY_STOCK = 500;
-
   const sale = function (article, cant){
     if(inventory[article] >= cant) {
        inventory[article] -= cant;
-      return HAY_STOCK;
+      return 200;
     } else {
-      return NO_HAY_STOCK;
+      return 500;
     }
   }
 
