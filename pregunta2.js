@@ -14,9 +14,17 @@
     pants: 5,
   }
 
-const sale = function (article, cant){
-  
-}
+  const HAY_STOCK = 200;
+  const NO_HAY_STOCK = 500;
+
+  const sale = function (article, cant){
+    if(inventory[article] >= cant) {
+       inventory[article] -= cant;
+      return HAY_STOCK;
+    } else {
+      return NO_HAY_STOCK;
+    }
+  }
 
 // TESTS (no modificar)
 console.log(sale('shoes',8) === 200 && inventory.shoes === 2);

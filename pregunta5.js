@@ -20,3 +20,12 @@ const beers = [
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
 ];
 
+for (let i = 0; i < beers.length; i++) {
+  let actBeer = beers[i];
+  let folder = actBeer.label.split('/')[5];
+  let name = actBeer.name.toLowerCase()+".png";
+  name = name.split(" ").join("-");
+  actBeer.label = `https://tecnoshare.sharepoint.com/sites/beer/${folder}/${name}`;
+}
+
+console.log(beers);

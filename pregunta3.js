@@ -3,7 +3,9 @@
 // si la longitud del array es < 3 se debe retornar undefined
 
 const greater3 = nums => {
-    
+    const nums2 = nums.filter((n, i) => nums.indexOf(n) === i)
+    nums2.sort((a,b) => a-b)
+    return nums.length < 3 ? undefined : nums2[nums2.length - 3]
 }
 
 
